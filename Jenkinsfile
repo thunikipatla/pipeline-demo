@@ -1,5 +1,5 @@
 pipeline{
-agent any 
+agent any
   stages{
     stage('SCM'){
       steps{
@@ -9,6 +9,11 @@ agent any
     stage('Build'){
       steps{
         sh ''' mvn package '''
+      }
+    }
+    stage('Archive-Artifacts'){
+      steps{
+        archiveArtifacts 'demo_*'
       }
     }
   }
