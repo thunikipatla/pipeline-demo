@@ -1,14 +1,14 @@
+pipeline{
 agent any 
-  stages {
+  stages{
     stage('SCM'){
-      steps {
-        git "https://github.com/thunikipatla/pipeline-demo.git"
+      steps{
+        git 'https://github.com/thunikipatla/pipeline-demo.git'
       }
     }
-    stage('Build') {
-      steps {
-        sh ''' echo "This stpe will build the mvn"
-                mkdir 'demo-Declarative' '''
+    stage('Build'){
+      steps{
+        sh ''' echo "This stpe will build the mvn" '''
       }
     }
   }
