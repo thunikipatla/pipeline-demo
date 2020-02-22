@@ -8,7 +8,7 @@ agent any
     }
     stage('Build'){
       steps{
-        sh ''' echo "This stpe will build the mvn" '''
+        sh ''' mvn package '''
       }
     }
   }
