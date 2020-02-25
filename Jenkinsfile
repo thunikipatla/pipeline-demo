@@ -42,5 +42,10 @@ agent any
         nexusArtifactUploader artifacts: [[artifactId: 'dev', classifier: '', file: "./target/demo_artifact-${BUILD_NUMBER}.jar", type: 'jar']], credentialsId: 'nexus', groupId: 'dev_group', nexusUrl: '192.168.34.11:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'RepoR', version: '${BUILD_NUMBER}'
       }
   }
+    stage('Deploy'){
+      steps {
+      sh ''' echo "THis stage is deploy the application to application server" '''
+      }
+    }
 }
 }
